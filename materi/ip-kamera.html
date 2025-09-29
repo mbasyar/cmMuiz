@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <title>Setting IP Kamera</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 font-sans text-gray-200">
+
+    <!-- Navbar -->
+  <nav class="bg-gray-800 text-white p-4 shadow-md">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <img src="../aset/cm.jpeg" alt="Logo SPI" class="w-10 h-10 rounded-full">
+        <span class="font-bold text-lg tracking-wide">Centralized Maintenance</span>
+      </div>
+
+      <!-- Menu Desktop -->
+      <div class="hidden md:flex space-x-8">
+        <a href="../index.html" class="hover:text-cyan-400 transition duration-300">Beranda</a>
+        <a href="install-windows.html" class="hover:text-cyan-400 transition duration-300">Install Windows</a>
+        <a href="barrier.html" class="text-cyan-400 font-bold transition duration-300">Barrier Gate</a>
+        <a href="ip-kamera.html" class="hover:text-cyan-400 transition duration-300">IP Kamera</a>
+        <a href="pos-client.html" class="hover:text-cyan-400 transition duration-300">POS Client</a>
+        <a href="patching.html" class="hover:text-cyan-400 transition duration-300">Patching</a>
+        <a href="instalasi-fedora-admin.html" class="hover:text-cyan-400 transition duration-300">Instalasi Fedora Admin</a>
+      </div>
+
+      <!-- Hamburger Mobile -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" 
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+     <!-- Dropdown Mobile -->
+    <div id="menu" class="hidden md:hidden mt-4 space-y-2 px-4">
+      <a href="../index.html" class="block hover:text-cyan-400 transition duration-300">Beranda</a>
+      <a href="patching.html" class="block hover:text-cyan-400 transition duration-300">Patching</a>
+      <a href="barrier.html" class="block hover:text-cyan-400 transition duration-300">Barrier Gate</a>
+      <a href="ip-kamera.html" class="block hover:text-cyan-400 transition duration-300">IP Kamera</a>
+      <a href="pos-client.html" class="block hover:text-cyan-400 transition duration-300">POS Client</a>
+      <a href="instalasi-fedora-admin.html" class="block hover:text-cyan-400 transition duration-300">Installasi admin</a>
+      <a href="install-windows.html" class="block hover:text-cyan-400 transition duration-300">Installasi Windows</a>
+    </div>
+   
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-cyan-700 to-cyan-900 text-white p-12 text-center shadow-xl">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3">Setting IP Kamera untuk Sistem Parkir</h1>
+    <p class="text-lg md:text-xl opacity-90">Langkah-langkah konfigurasi kamera IP agar terhubung dengan server monitoring</p>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-5xl mx-auto my-12 px-4 md:px-0 space-y-10">
+
+    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
+      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">1. Jenis Kamera yang Digunakan</h2>
+      <ul class="list-disc pl-6 space-y-1 text-gray-300">
+        <li>Kamera IP (PoE atau non-PoE)</li>
+        <li>Merek umum: Hikvision, Dahua, UNV, atau OEM lainnya</li>
+        <li>Mendukung RTSP atau ONVIF</li>
+      </ul>
+    </section>
+
+    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
+      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">2. Menentukan IP Kamera</h2>
+      <p class="text-gray-300 mb-2">Gunakan software dari vendor (contoh: SADP Tool dari Hikvision) untuk mendeteksi kamera di jaringan.</p>
+      <ul class="list-disc pl-6 space-y-1 text-gray-300">
+        <li>Hubungkan kamera ke switch jaringan atau langsung ke laptop</li>
+        <li>Buka SADP Tool → lihat IP default (misalnya 192.168.1.64)</li>
+        <li>Ubah IP agar sesuai dengan subnet server (contoh: 192.168.1.101)</li>
+        <li>Set gateway dan DNS jika perlu akses cloud</li>
+      </ul>
+    </section>
+
+    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
+      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">3. Login ke Kamera via Browser</h2>
+      <ol class="list-decimal pl-6 space-y-1 text-gray-300">
+        <li>Masukkan IP kamera di browser (Chrome/Edge)</li>
+        <li>Login (default user: admin, password: 12345 atau sesuai vendor)</li>
+        <li>Set resolusi, framerate, dan stream RTSP jika digunakan oleh server</li>
+        <li>Aktifkan protokol ONVIF jika menggunakan software pihak ketiga</li>
+      </ol>
+    </section>
+
+    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
+      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">4. Integrasi ke Server Monitoring</h2>
+      <ul class="list-disc pl-6 space-y-1 text-gray-300">
+        <li>Gunakan software NVR seperti ZoneMinder, iVMS, VLC, atau CMS dari vendor</li>
+        <li>Tambahkan IP dan RTSP stream ke sistem</li>
+        <li>Contoh URL RTSP:
+          <code class="block bg-gray-700 p-2 rounded text-sm mt-1">rtsp://admin:password@192.168.1.101:554/h264</code>
+        </li>
+        <li>Uji koneksi dan tampilan video realtime</li>
+      </ul>
+    </section>
+
+    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
+      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">5. Tips Keamanan & Jaringan</h2>
+      <ul class="list-disc pl-6 space-y-1 text-gray-300">
+        <li>Ganti password default kamera segera setelah aktivasi</li>
+        <li>Blok akses internet jika kamera hanya untuk lokal (via firewall)</li>
+        <li>Gunakan VLAN khusus untuk kamera jika sistem besar</li>
+      </ul>
+    </section>
+
+    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
+      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">6. Referensi Tambahan</h2>
+      <ul class="list-disc pl-6 space-y-3 text-cyan-400">
+        <li><a href="https://www.youtube.com/watch?v=di3VPzWZykM" target="_blank" class="hover:underline hover:text-cyan-300">Video: Setting IP Kamera Hikvision</a></li>
+        <li><a href="https://www.hikvision.com/id/support/tools/sadp-tool/" target="_blank" class="hover:underline hover:text-cyan-300">Download SADP Tool (Hikvision)</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 text-center p-6 mt-12 border-t border-gray-700">
+    <p>&copy; 2025 | Sistem Pembelajaran CM | Dibuat oleh Mahasiswa</p>
+  </footer>
+
+  <!-- Script Hamburger Mobile -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    const icon = document.getElementById('menu-icon');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      if (!menu.classList.contains('hidden')) {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+      } else {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+      }
+    });
+  </script>
+
+</body>
+</html>

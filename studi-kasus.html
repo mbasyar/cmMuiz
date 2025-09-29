@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <title>Studi Kasus - Central Maintenance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 font-sans text-gray-200">
+
+  <!-- Navbar -->
+<!-- Navbar -->
+<nav class="bg-gray-900/80 backdrop-blur-md fixed w-full z-50 shadow-md">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    <!-- Logo + Brand -->
+    <div class="flex items-center space-x-3">
+      <img src="./aset/cm.jpeg" alt="Logo CM" class="w-10 h-10 rounded-full border border-cyan-500 shadow-md">
+      <span class="font-extrabold text-lg tracking-wide text-cyan-400">CM Learning</span>
+    </div>
+
+    <!-- Menu Desktop -->
+    <div class="hidden md:flex space-x-8 font-medium items-center">
+      <a href="index.html" class="hover:text-cyan-400 transition">Beranda</a>
+      <a href="materi.html" class="hover:text-cyan-400 transition">Materi</a>
+      <a href="studi-kasus.html" class="hover:text-cyan-400 transition">Studi Kasus</a>
+      <a href="galeri.html" class="hover:text-cyan-400 transition">Galeri</a>
+      <a href="sumber.html" class="hover:text-cyan-400 transition">Sumber</a>
+      <a href="tentang.html" class="hover:text-cyan-400 transition">Tentang</a>
+      <!-- Tombol Logout -->
+      <a href="login.html" class="ml-4 px-3 py-1 rounded bg-red-600 hover:bg-red-700 text-white transition">
+        Logout
+      </a>
+    </div>
+
+    <!-- Hamburger Menu Mobile -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="focus:outline-none text-gray-300 hover:text-cyan-400">
+        <svg xmlns="http://www.w3.org/2000/svg" id="menu-icon" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Dropdown Mobile -->
+  <div id="menu" class="hidden md:hidden mt-4 space-y-3 px-4 pb-4">
+    <a href="index.html" class="block hover:text-cyan-400">Beranda</a>
+    <a href="materi.html" class="block hover:text-cyan-400">Materi</a>
+    <a href="studi-kasus.html" class="block hover:text-cyan-400">Studi Kasus</a>
+    <a href="galeri.html" class="block hover:text-cyan-400">Galeri</a>
+    <a href="sumber.html" class="block hover:text-cyan-400">Sumber</a>
+    <a href="tentang.html" class="block hover:text-cyan-400">Tentang</a>
+    <!-- Tombol Logout Mobile -->
+    <a href="login.html" class="block mt-2 px-3 py-2 rounded bg-red-600 hover:bg-red-700 text-white transition">
+      Logout
+    </a>
+  </div>
+</nav>
+
+
+  <!-- Hero -->
+  <header class="relative bg-gradient-to-r from-cyan-700 via-cyan-800 to-gray-900 text-white text-center pt-32 pb-20 shadow-lg">
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] opacity-10"></div>
+    <div class="relative z-10">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-wide drop-shadow-lg">Studi Kasus Centralized Maintenance</h1>
+      <p class="text-lg opacity-90 max-w-2xl mx-auto leading-relaxed">
+        Kumpulan permasalahan nyata di lapangan beserta solusi teknis oleh tim CM.
+      </p>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-4xl mx-auto my-12 px-6 space-y-8">
+
+    <!-- Kasus -->
+    <section class="bg-gray-800 p-6 rounded-xl shadow-md space-y-3">
+      <h2 class="text-xl font-bold text-cyan-400">1. Sensor Loop Tidak Membaca Kendaraan</h2>
+      <p><span class="font-semibold text-white">Masalah:</span> Gerbang tidak terbuka meski mobil berhenti di area deteksi.</p>
+      <p><span class="font-semibold text-white">Solusi:</span> Kabel loop diganti karena putus akibat gigitan tikus.</p>
+    </section>
+
+    <section class="bg-gray-800 p-6 rounded-xl shadow-md space-y-3">
+      <h2 class="text-xl font-bold text-cyan-400">2. Barrier Gate Macet</h2>
+      <p><span class="font-semibold text-white">Masalah:</span> Palang tidak terangkat meski tiket sudah divalidasi.</p>
+      <p><span class="font-semibold text-white">Solusi:</span> Baut motor gear dikencangkan dan modul kontrol diperbaiki.</p>
+    </section>
+
+    <section class="bg-gray-800 p-6 rounded-xl shadow-md space-y-3">
+      <h2 class="text-xl font-bold text-cyan-400">3. CCTV Area Keluar Mati</h2>
+      <p><span class="font-semibold text-white">Masalah:</span> Rekaman kendaraan keluar tidak tersedia.</p>
+      <p><span class="font-semibold text-white">Solusi:</span> Power supply diganti dan konektor BNC diperbaiki.</p>
+    </section>
+
+    <section class="bg-gray-800 p-6 rounded-xl shadow-md space-y-3">
+      <h2 class="text-xl font-bold text-cyan-400">4. Mesin Tiket Tidak Mengeluarkan Kartu</h2>
+      <p><span class="font-semibold text-white">Masalah:</span> Pengendara tidak bisa masuk karena mesin tidak mengeluarkan tiket.</p>
+      <p><span class="font-semibold text-white">Solusi:</span> Roller dibersihkan dan sensor kertas diganti.</p>
+    </section>
+
+    <section class="bg-gray-800 p-6 rounded-xl shadow-md space-y-3">
+      <h2 class="text-xl font-bold text-cyan-400">5. Server Parkir Hang</h2>
+      <p><span class="font-semibold text-white">Masalah:</span> Sistem backend tidak merespons, transaksi macet.</p>
+      <p><span class="font-semibold text-white">Solusi:</span> Server direstart, patch keamanan di-update, database dioptimasi.</p>
+    </section>
+
+  </main>
+
+ <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-700">
+    <p>&copy; 2025 - Centralized Maintenance Learning | Develop by Rullz.</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
