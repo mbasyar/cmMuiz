@@ -26,134 +26,158 @@
       
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">ssh root@192.168.1.200</code>
-        <p class="text-gray-300 text-sm mt-1">Terhubung ke EPS server sebagai root melalui SSH.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Terhubung ke EPS server sebagai root melalui SSH.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">cd /opt</code>
-        <p class="text-gray-300 text-sm mt-1">Masuk ke direktori /opt di server EPS.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Masuk ke direktori /opt di server EPS.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">sftp root@192.168.1.201</code>
-        <p class="text-gray-300 text-sm mt-1">Membuka koneksi SFTP ke server lain untuk mengambil data EPS.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Membuka koneksi SFTP ke server lain untuk mengambil data EPS.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">cd /opt</code>
-        <p class="text-gray-300 text-sm mt-1">Pindah ke direktori /opt di server tujuan SFTP.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Pindah ke direktori /opt di server tujuan SFTP.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">get -R epsclient</code>
-        <p class="text-gray-300 text-sm mt-1">Mengambil folder epsclient beserta isinya dari server SFTP.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Mengambil folder epsclient beserta isinya dari server SFTP.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">exit</code>
-        <p class="text-gray-300 text-sm mt-1">Keluar dari koneksi SFTP.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Keluar dari koneksi SFTP.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">chmod 777 -R epsclient</code>
-        <p class="text-gray-300 text-sm mt-1">Memberi hak akses penuh ke folder epsclient agar bisa dijalankan.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Memberi hak akses penuh ke folder epsclient agar bisa dijalankan.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">cd /epsclient</code>
-        <p class="text-gray-300 text-sm mt-1">Masuk ke folder epsclient untuk melihat file di dalamnya.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Masuk ke folder epsclient untuk melihat file di dalamnya.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">ls</code>
-        <p class="text-gray-300 text-sm mt-1">Melihat isi folder epsclient.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Melihat isi folder epsclient.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">cp Qt-5.12.12-nexel132.tar.gz /opt</code>
-        <p class="text-gray-300 text-sm mt-1">Menyalin paket Qt ke folder /opt untuk instalasi.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Menyalin paket Qt ke folder /opt untuk instalasi.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">tar -xzvf Qt-5.12.12-nexel132.tar.gz</code>
-        <p class="text-gray-300 text-sm mt-1">Mengekstrak paket Qt di folder /opt.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Mengekstrak paket Qt di folder /opt.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">vi epsfleg.ini</code>
-        <p class="text-gray-300 text-sm mt-1">Mengedit konfigurasi EPS FLEG.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Mengedit konfigurasi EPS FLEG.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">vi /root/.bash_login</code>
-        <p class="text-gray-300 text-sm mt-1">Mengedit file login bash root untuk setting PATH atau environment.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Mengedit file login bash root untuk setting PATH atau environment.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">rm /etc/system/timesyncd.conf</code>
-        <p class="text-gray-300 text-sm mt-1">Menghapus file konfigurasi timesyncd agar bisa diatur ulang.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Menghapus file konfigurasi timesyncd agar bisa diatur ulang.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">dpkg-reconfigure tzdata</code>
-        <p class="text-gray-300 text-sm mt-1">Mengatur zona waktu server (Asia/Jakarta).</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Mengatur zona waktu server (Asia/Jakarta).
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">vi /etc/network/interfaces</code>
-        <p class="text-gray-300 text-sm mt-1">Mengubah konfigurasi IP server EPS.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Mengubah konfigurasi IP server EPS.
+        </p>
       </div>
 
       <div>
         <code class="bg-gray-800 text-gray-100 p-1 rounded block">reboot</code>
-        <p class="text-gray-300 text-sm mt-1">Merestart server agar semua konfigurasi diterapkan.</p>
+        <p class="text-gray-300 text-sm mt-1 opacity-80 backdrop-blur-sm">
+          Merestart server agar semua konfigurasi diterapkan.
+        </p>
       </div>
 
     </section>
 
-    <p class="text-orange-400 font-semibold text-sm">
-      Catatan: Lakukan langkah-langkah dengan hati-hati. Salah satu perintah dapat mempengaruhi sistem EPS.
-    </p>
-
   </main>
 
+  <!-- Footer -->
   <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-700 mt-10">
     <p>&copy; 2025 | Developed by Rllz</p>
   </footer>
 
- <!-- Floating Menu Modern -->
-<div id="floatingMenu" class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-2">
-  <button id="menuToggle" 
-          class="flex items-center justify-center bg-cyan-500 hover:from-cyan-400 hover:to-cyan-300 bg-gradient-to-r text-white px-5 py-3 rounded-full shadow-xl font-semibold transform transition-all duration-300 hover:scale-110">
-    <span class="mr-2">Menu</span>
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-    </svg>
-  </button>
+  <!-- Floating Menu Modern -->
+  <div id="floatingMenu" class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-2">
+    <button id="menuToggle" 
+            class="flex items-center justify-center bg-cyan-500 hover:from-cyan-400 hover:to-cyan-300 bg-gradient-to-r text-white px-5 py-3 rounded-full shadow-xl font-semibold transform transition-all duration-300 hover:scale-110">
+      <span class="mr-2">Menu</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
 
-  <!-- Menu List -->
-  <div id="menuList" class="hidden flex flex-col space-y-2 mt-3 bg-gray-900/80 backdrop-blur-lg p-4 rounded-xl shadow-2xl border border-gray-700">
-    <a href="../index.html" class="flex items-center px-4 py-2 rounded-lg bg-gray-800 hover:bg-cyan-600 text-white font-medium transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6m-6 0H7m0 0v6m0-6l-2 2m2-2l2 2"/>
-      </svg>
-      Beranda
-    </a>
-    <a href="../materi.html" class="flex items-center px-4 py-2 rounded-lg bg-gray-800 hover:bg-cyan-600 text-white font-medium transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3h8v4M3 7h18v14H3V7z"/>
-      </svg>
-      Daftar Materi
-    </a>
+    <!-- Menu List -->
+    <div id="menuList" class="hidden flex flex-col space-y-2 mt-3 bg-gray-900/80 backdrop-blur-lg p-4 rounded-xl shadow-2xl border border-gray-700">
+      <a href="../index.html" class="flex items-center px-4 py-2 rounded-lg bg-gray-800 hover:bg-cyan-600 text-white font-medium transition">
+        Beranda
+      </a>
+      <a href="../materi.html" class="flex items-center px-4 py-2 rounded-lg bg-gray-800 hover:bg-cyan-600 text-white font-medium transition">
+        Daftar Materi
+      </a>
+    </div>
   </div>
-</div>
 
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const menuList = document.getElementById('menuList');
   menuToggle.addEventListener('click', () => {
     menuList.classList.toggle('hidden');
-    menuToggle.classList.toggle('bg-cyan-500');
   });
 </script>
 
