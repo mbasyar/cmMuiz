@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <title>Perintah Setelah Instal Ulang Fedora 30</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 font-sans text-gray-200">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900/80 backdrop-blur-md fixed w-full z-50 shadow-md">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <div class="flex items-center space-x-3">
+        <img src="../aset/cm.jpeg" alt="Logo CM" class="w-10 h-10 rounded-full border border-cyan-500 shadow-md">
+        <span class="font-extrabold text-lg tracking-wide text-cyan-400">CM Learning</span>
+      </div>
+      <div class="hidden md:flex space-x-8 font-medium items-center">
+        <a href="../index.html" class="hover:text-cyan-400 transition">Beranda</a>
+        <a href="../materi.html" class="hover:text-cyan-400 transition">Materi</a>
+        <a href="../studi-kasus.html" class="hover:text-cyan-400 transition">Studi Kasus</a>
+        <a href="../galeri.html" class="hover:text-cyan-400 transition">Galeri</a>
+        <a href="../sumber.html" class="hover:text-cyan-400 transition">Sumber</a>
+        <a href="../tentang.html" class="hover:text-cyan-400 transition">Tentang</a>
+        <a href="../login.html" class="ml-4 px-3 py-1 rounded bg-red-600 hover:bg-red-700 text-white transition">Logout</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none text-gray-300 hover:text-cyan-400">
+          <svg xmlns="http://www.w3.org/2000/svg" id="menu-icon" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="menu" class="hidden md:hidden mt-4 space-y-3 px-4 pb-4">
+      <a href="../index.html" class="block hover:text-cyan-400">Beranda</a>
+      <a href="../materi.html" class="block hover:text-cyan-400">Materi</a>
+      <a href="../studi-kasus.html" class="block hover:text-cyan-400">Studi Kasus</a>
+      <a href="../galeri.html" class="block hover:text-cyan-400">Galeri</a>
+      <a href="../sumber.html" class="block hover:text-cyan-400">Sumber</a>
+      <a href="../tentang.html" class="block hover:text-cyan-400">Tentang</a>
+      <a href="../login.html" class="block mt-2 px-3 py-2 rounded bg-red-600 hover:bg-red-700 text-white transition">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="pt-28 pb-12 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 drop-shadow-lg">Perintah Setelah Instal Ulang Fedora 30</h1>
+    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+    <p class="mt-4 text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+      Panduan konfigurasi awal Fedora 30 agar sistem siap digunakan dan sinkron dengan perangkat parkir.
+    </p>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto p-6 bg-gray-800 my-10 rounded-xl shadow-lg space-y-8">
+
+    <section>
+      <h2 class="text-xl font-semibold text-cyan-400 mb-4">Langkah-langkah Konfigurasi</h2>
+      <div class="bg-gray-900 p-4 rounded-md shadow-inner font-mono text-gray-200 space-y-3">
+
+        <div>
+          <p><code>systemctl disable firewalld.service</code></p>
+          <p class="text-gray-400 text-sm mt-1">Menonaktifkan firewall Fedora agar tidak menghalangi koneksi internal sistem parkir.</p>
+        </div>
+
+        <div>
+          <p><code>systemctl enable httpd</code></p>
+          <p class="text-gray-400 text-sm mt-1">Mengaktifkan layanan web server Apache agar dapat diakses secara otomatis saat boot.</p>
+        </div>
+
+        <div>
+          <p><code>systemctl enable sshd</code></p>
+          <p class="text-gray-400 text-sm mt-1">Mengaktifkan layanan SSH untuk akses remote ke server.</p>
+        </div>
+
+        <div>
+          <p><code>vi /etc/auto.master</code></p>
+          <p class="text-gray-400 text-sm mt-1">Membuka file konfigurasi auto-mount, hilangkan tanda pager jika muncul untuk menampilkan seluruh isi file.</p>
+        </div>
+
+        <div>
+          <p><code>vi /etc/auto.bitmap_in</code></p>
+          <p class="text-gray-400 text-sm mt-1">Membuat atau mengedit konfigurasi auto-mount untuk folder <code>bitmap_in</code>.</p>
+        </div>
+
+        <div>
+          <p><code>vi /etc/auto.bitmap_out</code></p>
+          <p class="text-gray-400 text-sm mt-1">Membuat atau mengedit konfigurasi auto-mount untuk folder <code>bitmap_out</code>.</p>
+        </div>
+
+        <div>
+          <p><code>showmount -e 192.168.1.50</code></p>
+          <p class="text-gray-400 text-sm mt-1">Menampilkan daftar folder yang dibagikan oleh server NFS untuk memastikan koneksi tersedia.</p>
+        </div>
+
+        <div>
+          <p><code>systemctl enable autofs</code></p>
+          <p class="text-gray-400 text-sm mt-1">Mengaktifkan layanan auto-mount agar folder remote dapat diakses otomatis saat boot.</p>
+        </div>
+
+        <div>
+          <p><code>systemctl restart autofs</code></p>
+          <p class="text-gray-400 text-sm mt-1">Memulai ulang layanan auto-mount agar perubahan konfigurasi diterapkan.</p>
+        </div>
+
+        <div>
+          <p><code>cd /tmp/bitmap_in/data</code></p>
+          <p class="text-gray-400 text-sm mt-1">Masuk ke folder sementara untuk menyimpan data bitmap yang akan digunakan oleh sistem parkir.</p>
+        </div>
+
+      </div>
+
+      <p class="mt-4 text-orange-400 text-sm font-semibold">
+        Catatan: Lakukan langkah-langkah ini secara berurutan agar Fedora 30 siap digunakan untuk sistem parkir dan tidak terjadi konflik layanan.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-700">
+    <p>&copy; 2025 | Developed by Rllz</p>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

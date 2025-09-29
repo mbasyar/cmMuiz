@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <title>Materi SETTING EPS FLEG (Penjelasan untuk Pemula)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 font-sans text-gray-200">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900/80 backdrop-blur-md fixed w-full z-50 shadow-md">
+    <div class="container mx-auto flex items-center justify-between p-4">
+      <div class="flex items-center space-x-3">
+        <img src="../aset/cm.jpeg" alt="Logo CM" class="w-10 h-10 rounded-full border border-cyan-500 shadow-md">
+        <span class="font-extrabold text-lg tracking-wide text-cyan-400">CM Learning</span>
+      </div>
+      <div class="hidden md:flex space-x-8 font-medium items-center">
+        <a href="../index.html" class="hover:text-cyan-400 transition">Beranda</a>
+        <a href="../materi.html" class="hover:text-cyan-400 transition">Materi</a>
+        <a href="../studi-kasus.html" class="hover:text-cyan-400 transition">Studi Kasus</a>
+        <a href="../galeri.html" class="hover:text-cyan-400 transition">Galeri</a>
+        <a href="../sumber.html" class="hover:text-cyan-400 transition">Sumber</a>
+        <a href="../tentang.html" class="hover:text-cyan-400 transition">Tentang</a>
+        <a href="../login.html" class="ml-4 px-3 py-1 rounded bg-red-600 hover:bg-red-700 text-white transition">Logout</a>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none text-gray-300 hover:text-cyan-400">
+          <svg xmlns="http://www.w3.org/2000/svg" id="menu-icon" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="menu" class="hidden md:hidden mt-4 space-y-3 px-4 pb-4">
+      <a href="../index.html" class="block hover:text-cyan-400">Beranda</a>
+      <a href="../materi.html" class="block hover:text-cyan-400">Materi</a>
+      <a href="../studi-kasus.html" class="block hover:text-cyan-400">Studi Kasus</a>
+      <a href="../galeri.html" class="block hover:text-cyan-400">Galeri</a>
+      <a href="../sumber.html" class="block hover:text-cyan-400">Sumber</a>
+      <a href="../tentang.html" class="block hover:text-cyan-400">Tentang</a>
+      <a href="../login.html" class="block mt-2 px-3 py-2 rounded bg-red-600 hover:bg-red-700 text-white transition">Logout</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="pt-28 pb-12 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 drop-shadow-lg">SETTING EPS FLEG</h1>
+    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+    <p class="mt-4 text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+      Panduan langkah demi langkah untuk konfigurasi EPS FLEG dengan penjelasan agar mudah dipahami pemula.
+    </p>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto p-6 bg-gray-800 my-10 rounded-xl shadow-lg space-y-8">
+
+    <!-- Section Materi -->
+    <section>
+      <h2 class="text-xl font-semibold text-cyan-400 mb-4">Langkah-langkah Setting EPS FLEG</h2>
+      
+      <div class="bg-gray-900 p-4 rounded-md shadow-inner font-mono text-gray-200 space-y-3">
+
+        <div>
+          <p><code>ssh root@192.168.1.200</code></p>
+          <p class="text-gray-400 text-sm mt-1">Mengakses server EPS FLEG melalui SSH dengan user root.</p>
+        </div>
+
+        <div>
+          <p><code>cd /opt</code></p>
+          <p class="text-gray-400 text-sm mt-1">Masuk ke direktori <code>/opt</code> tempat biasanya software disimpan.</p>
+        </div>
+
+        <div>
+          <p><code>sftp root@192.168.1.201</code></p>
+          <p class="text-gray-400 text-sm mt-1">Menghubungkan ke server lain untuk mengambil data EPS FLEG menggunakan SFTP.</p>
+        </div>
+
+        <div>
+          <p><code>cd /opt</code></p>
+          <p class="text-gray-400 text-sm mt-1">Masuk ke direktori <code>/opt</code> di server tujuan.</p>
+        </div>
+
+        <div>
+          <p><code>get -R epsclient</code></p>
+          <p class="text-gray-400 text-sm mt-1">Menyalin seluruh folder <code>epsclient</code> dari server tujuan ke server lokal.</p>
+        </div>
+
+        <div>
+          <p><code>exit</code></p>
+          <p class="text-gray-400 text-sm mt-1">Keluar dari sesi SFTP setelah data berhasil diambil.</p>
+        </div>
+
+        <div>
+          <p><code>chmod 777 -R epsclient</code></p>
+          <p class="text-gray-400 text-sm mt-1">Memberikan hak akses penuh ke folder <code>epsclient</code> dan semua isinya agar bisa dibaca/tulis/eksekusi.</p>
+        </div>
+
+        <div>
+          <p><code>cd /epsclient</code></p>
+          <p class="text-gray-400 text-sm mt-1">Masuk ke folder EPS FLEG.</p>
+        </div>
+
+        <div>
+          <p><code>ls</code></p>
+          <p class="text-gray-400 text-sm mt-1">Melihat daftar file dan folder di direktori saat ini.</p>
+        </div>
+
+        <div>
+          <p><code>cp Qt-5.12.12-nexel132.tar.gz /opt</code></p>
+          <p class="text-gray-400 text-sm mt-1">Menyalin file Qt yang diperlukan ke direktori <code>/opt</code>.</p>
+        </div>
+
+        <div>
+          <p><code>tar -xzvf Qt-5.12.12-nexel132.tar.gz</code></p>
+          <p class="text-gray-400 text-sm mt-1">Mengekstrak file Qt yang sudah disalin.</p>
+        </div>
+
+        <div>
+          <p><code>vi epsfleg.ini</code></p>
+          <p class="text-gray-400 text-sm mt-1">Membuka file konfigurasi EPS FLEG untuk diubah sesuai kebutuhan.</p>
+        </div>
+
+        <div>
+          <p><code>vi /root/.bash_login</code></p>
+          <p class="text-gray-400 text-sm mt-1">Membuka file konfigurasi login bash untuk sinkronisasi setting.</p>
+        </div>
+
+        <div>
+          <p><code>sftp root@192.168.1.201</code></p>
+          <p class="text-gray-400 text-sm mt-1">Kembali ke server sumber untuk menyalin file konfigurasi login.</p>
+        </div>
+
+        <div>
+          <p><code>get .bash_login</code></p>
+          <p class="text-gray-400 text-sm mt-1">Mengambil file <code>.bash_login</code> dari server sumber.</p>
+        </div>
+
+        <div>
+          <p><code>exit</code></p>
+          <p class="text-gray-400 text-sm mt-1">Keluar dari sesi SFTP setelah file berhasil diambil.</p>
+        </div>
+
+        <div>
+          <p><code>rm -rf .bash_login</code></p>
+          <p class="text-gray-400 text-sm mt-1">Menghapus file lama agar tidak konflik.</p>
+        </div>
+
+        <div>
+          <p><code>vi /root/.bash_login</code></p>
+          <p class="text-gray-400 text-sm mt-1">Menyisipkan file login baru agar konfigurasi terbaru berlaku.</p>
+        </div>
+
+        <div>
+          <p><code>ls -la</code></p>
+          <p class="text-gray-400 text-sm mt-1">Memeriksa semua file di direktori root beserta hak aksesnya.</p>
+        </div>
+
+      </div>
+
+      <p class="mt-4 text-orange-400 text-sm font-semibold">
+        Catatan: Ikuti urutan langkah dengan hati-hati agar EPS FLEG dapat berfungsi normal dan sinkron dengan sistem server.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-700">
+    <p>&copy; 2025 | Developed by Rllz</p>
+  </footer>
+
+  <!-- Script Hamburger -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
