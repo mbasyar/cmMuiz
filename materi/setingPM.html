@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <title>Cara Setting PM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 font-sans text-gray-200">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 text-white p-4 shadow-md">
+    <div class="container mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <img src="../aset/cm.jpeg" alt="Logo SPI" class="w-10 h-10 rounded-full">
+        <span class="font-bold text-lg tracking-wide">
+          <a href="../index.html" class="hover:text-cyan-400 transition duration-300">Centralized Maintenance</a>
+        </span>
+      </div>
+
+      <!-- Menu Desktop -->
+      <div class="hidden md:flex space-x-8">
+        <a href="install-windows.html" class="hover:text-cyan-400 transition duration-300">Install Windows</a>
+        <a href="barrier.html" class="hover:text-cyan-400 transition duration-300">Barrier Gate</a>
+        <a href="ip-kamera.html" class="hover:text-cyan-400 transition duration-300">IP Kamera</a>
+        <a href="pos-client.html" class="hover:text-cyan-400 transition duration-300">POS Client</a>
+        <a href="cara-setting-pm.html" class="text-cyan-400 font-bold transition duration-300">Cara Setting PM</a>
+      </div>
+
+      <!-- Hamburger Mobile -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" 
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dropdown Mobile -->
+    <div id="menu" class="hidden md:hidden mt-4 space-y-2 px-4">
+      <a href="../index.html" class="block hover:text-cyan-400 transition duration-300">Beranda</a>
+      <a href="install-windows.html" class="block hover:text-cyan-400 transition duration-300">Install Windows</a>
+      <a href="barrier.html" class="block hover:text-cyan-400 transition duration-300">Barrier Gate</a>
+      <a href="ip-kamera.html" class="block hover:text-cyan-400 transition duration-300">IP Kamera</a>
+      <a href="pos-client.html" class="block hover:text-cyan-400 transition duration-300">POS Client</a>
+      <a href="cara-setting-pm.html" class="block hover:text-cyan-400 transition duration-300">Cara Setting PM</a>
+    </div>
+  </nav>
+
+<!-- Header -->
+<header class="relative pt-28 pb-16 text-center bg-gradient-to-b from-gray-900/0 to-gray-900/60">
+  <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 drop-shadow-lg">Cara Setting PM</h1>
+  
+  <!-- Garis animasi -->
+  <div class="w-28 h-1 bg-cyan-500 mx-auto mt-4 rounded-full relative overflow-hidden">
+    <div class="absolute left-0 top-0 h-1 bg-cyan-300 animate-pulse w-1/2 rounded-full"></div>
+  </div>
+  
+  <!-- Subtitle -->
+ 
+</header>
+
+
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto p-6 bg-gray-800 my-10 rounded-xl shadow-lg space-y-8">
+
+    <!-- Section 1 -->
+    <section>
+      <h2 class="text-xl font-semibold text-cyan-400 mb-2">1. Login ke PM</h2>
+      <ul class="list-disc pl-6 text-gray-300 space-y-1">
+        <li><code class="bg-gray-700 p-1 rounded">telnet 192.168.1.101</code></li>
+        <li>Login root: <code class="bg-gray-700 p-1 rounded">quick sps login [root]</code></li>
+      </ul>
+    </section>
+
+    <!-- Section 2 -->
+    <section>
+      <h2 class="text-xl font-semibold text-cyan-400 mb-2">2. Konfigurasi Park.ini</h2>
+      <ul class="list-disc pl-6 text-gray-300 space-y-1">
+        <li><code class="bg-gray-700 p-1 rounded">cd /opt/quicksps</code></li>
+        <li>Lihat isi folder: <code class="bg-gray-700 p-1 rounded">ls</code></li>
+        <li>Edit konfigurasi: <code class="bg-gray-700 p-1 rounded">vi park.ini</code></li>
+        <li>Ubah: kelas kendaraan, nama PM, kode lokasi, dan pesan "Welcome to ..."</li>
+        <li>Simpan: <code class="bg-gray-700 p-1 rounded">:wq</code></li>
+      </ul>
+    </section>
+
+    <!-- Section 3 -->
+    <section>
+      <h2 class="text-xl font-semibold text-cyan-400 mb-2">3. Konfigurasi Net.conf</h2>
+      <ul class="list-disc pl-6 text-gray-300 space-y-1">
+        <li><code class="bg-gray-700 p-1 rounded">cd /etc</code></li>
+        <li>Edit net.conf sesuai PM: <code class="bg-gray-700 p-1 rounded">vi net.conf</code></li>
+        <li>Reboot PM: <code class="bg-gray-700 p-1 rounded">reboot</code></li>
+      </ul>
+    </section>
+
+    <!-- Section 4 -->
+    <section>
+      <h2 class="text-xl font-semibold text-cyan-400 mb-2">4. Sinkronisasi dengan PK</h2>
+      <ul class="list-disc pl-6 text-gray-300 space-y-1">
+        <li>Telnet ke PK baru: <code class="bg-gray-700 p-1 rounded">telnet 192.168.1.201</code></li>
+        <li>Login root: <code class="bg-gray-700 p-1 rounded">root</code></li>
+        <li>Edit park.ini: <code class="bg-gray-700 p-1 rounded">vi park.ini</code> dan salin db password dari PM lain</li>
+        <li>Edit fstab sesuai server: <code class="bg-gray-700 p-1 rounded">vi fstab</code></li>
+        <li>Simpan perubahan: <code class="bg-gray-700 p-1 rounded">:wq</code></li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section>
+      <h2 class="text-xl font-semibold text-cyan-400 mb-2">5. Patch QuickSPS</h2>
+      <ul class="list-disc pl-6 text-gray-300 space-y-1">
+        <li>Masuk ke folder image data: <code class="bg-gray-700 p-1 rounded">cd /opt/quicksps/image_in/data</code></li>
+        <li>Lihat versi PM: <code class="bg-gray-700 p-1 rounded">ls</code></li>
+        <li>Masuk ke folder versi PM: <code class="bg-gray-700 p-1 rounded">cd versi_pm</code></li>
+        <li>Jalankan patch: <code class="bg-gray-700 p-1 rounded">./patch_quicksps</code></li>
+        <li>Reboot PM jika diperlukan</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center p-4 mt-10 border-t border-gray-700">
+    <p>&copy; 2025 | Sistem Pembelajaran CM | Dibuat oleh Mahasiswa</p>
+  </footer>
+
+  <!-- Script Hamburger -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    const icon = document.getElementById('menu-icon');
+
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      if (!menu.classList.contains('hidden')) {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+      } else {
+        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+      }
+    });
+  </script>
+
+</body>
+</html>
