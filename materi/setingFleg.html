@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting EPS FLEG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+  <!-- Header -->
+  <header class="pt-28 pb-12 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 drop-shadow-lg">Setting EPS FLEG</h1>
+    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-3xl mx-auto p-6 space-y-6">
+
+    <!-- Command List -->
+    <section class="space-y-4">
+      
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">ssh root@192.168.1.200</code>
+        <p class="text-gray-300 text-sm mt-1">Terhubung ke EPS server sebagai root melalui SSH.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">cd /opt</code>
+        <p class="text-gray-300 text-sm mt-1">Masuk ke direktori /opt di server EPS.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">sftp root@192.168.1.201</code>
+        <p class="text-gray-300 text-sm mt-1">Membuka koneksi SFTP ke server lain untuk mengambil data EPS.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">cd /opt</code>
+        <p class="text-gray-300 text-sm mt-1">Pindah ke direktori /opt di server tujuan SFTP.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">get -R epsclient</code>
+        <p class="text-gray-300 text-sm mt-1">Mengambil folder epsclient beserta isinya dari server SFTP.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">exit</code>
+        <p class="text-gray-300 text-sm mt-1">Keluar dari koneksi SFTP.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">chmod 777 -R epsclient</code>
+        <p class="text-gray-300 text-sm mt-1">Memberi hak akses penuh ke folder epsclient agar bisa dijalankan.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">cd /epsclient</code>
+        <p class="text-gray-300 text-sm mt-1">Masuk ke folder epsclient untuk melihat file di dalamnya.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">ls</code>
+        <p class="text-gray-300 text-sm mt-1">Melihat isi folder epsclient.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">cp Qt-5.12.12-nexel132.tar.gz /opt</code>
+        <p class="text-gray-300 text-sm mt-1">Menyalin paket Qt ke folder /opt untuk instalasi.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">tar -xzvf Qt-5.12.12-nexel132.tar.gz</code>
+        <p class="text-gray-300 text-sm mt-1">Mengekstrak paket Qt di folder /opt.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">vi epsfleg.ini</code>
+        <p class="text-gray-300 text-sm mt-1">Mengedit konfigurasi EPS FLEG.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">vi /root/.bash_login</code>
+        <p class="text-gray-300 text-sm mt-1">Mengedit file login bash root untuk setting PATH atau environment.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">rm /etc/system/timesyncd.conf</code>
+        <p class="text-gray-300 text-sm mt-1">Menghapus file konfigurasi timesyncd agar bisa diatur ulang.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">dpkg-reconfigure tzdata</code>
+        <p class="text-gray-300 text-sm mt-1">Mengatur zona waktu server (Asia/Jakarta).</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">vi /etc/network/interfaces</code>
+        <p class="text-gray-300 text-sm mt-1">Mengubah konfigurasi IP server EPS.</p>
+      </div>
+
+      <div>
+        <code class="bg-gray-800 text-gray-100 p-1 rounded block">reboot</code>
+        <p class="text-gray-300 text-sm mt-1">Merestart server agar semua konfigurasi diterapkan.</p>
+      </div>
+
+    </section>
+
+    <p class="text-orange-400 font-semibold text-sm">
+      Catatan: Lakukan langkah-langkah dengan hati-hati. Salah satu perintah dapat mempengaruhi sistem EPS.
+    </p>
+
+  </main>
+
+  <!-- Floating Menu -->
+  <div id="floatingMenu" class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2">
+    <button id="menuToggle" class="bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-2 rounded-full shadow-lg font-semibold">
+      Menu
+    </button>
+
+    <div id="menuList" class="hidden flex flex-col space-y-2 mt-2 bg-gray-900/90 backdrop-blur-md p-3 rounded-lg shadow-lg">
+      <a href="../index.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">Beranda</a>
+      <a href="setingPM.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">1. Cara Setting PM</a>
+      <a href="setingPK.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">2. Cara Setting PK</a>
+      <a href="settingEPS.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">3. Setting EPS FLEG</a>
+      <a href="fedoraPostInstall.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">4. Perintah Setelah Install Ulang Fedora 30</a>
+      <a href="hapusMemoriPM.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">5. Cara Hapus Memori PM</a>
+    </div>
+  </div>
+
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-700 mt-10">
+    <p>&copy; 2025 | Developed by Rllz</p>
+  </footer>
+
+  <script>
+    // Toggle floating menu
+    const menuToggle = document.getElementById('menuToggle');
+    const menuList = document.getElementById('menuList');
+    menuToggle.addEventListener('click', () => {
+      menuList.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

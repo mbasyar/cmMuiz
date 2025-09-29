@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cara Pasang Admin di POS</title>
+  <script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    code { background-color: #374151; padding: 0.25rem 0.5rem; border-radius: 0.375rem; display: block; }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-200 min-h-screen">
+
+  <!-- Header -->
+  <header class="pt-28 pb-12 text-center">
+    <h1 class="text-4xl font-extrabold text-cyan-400 drop-shadow-lg">Cara Pasang Admin di POS</h1>
+    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto p-6 bg-gray-800 my-10 rounded-xl shadow-lg space-y-8">
+
+    <section>
+      <h2 class="text-xl font-semibold text-cyan-400 mb-4">Langkah-langkah</h2>
+      <div class="space-y-4">
+
+        <div>
+          <code>cd /home/client01</code>
+          <p class="text-gray-400 text-sm mt-1">Masuk ke direktori client POS.</p>
+        </div>
+
+        <div>
+          <code>sftp root@192.168.1.55</code>
+          <p class="text-gray-400 text-sm mt-1">Koneksi ke server remote POS untuk mengambil data admin.</p>
+        </div>
+
+        <div>
+          <code>cd /home/adm01</code>
+          <p class="text-gray-400 text-sm mt-1">Pindah ke direktori admin di server POS.</p>
+        </div>
+
+        <div>
+          <code>get -R spsadmin</code>
+          <p class="text-gray-400 text-sm mt-1">Menyalin folder spsadmin secara rekursif ke lokal POS.</p>
+        </div>
+
+        <div>
+          <code>exit</code>
+          <p class="text-gray-400 text-sm mt-1">Keluar dari sesi SFTP.</p>
+        </div>
+
+        <div>
+          <code>vi /etc/WindowMaker/WMRootMenu</code>
+          <p class="text-gray-400 text-sm mt-1">Buka file menu root untuk menambahkan menu admin.</p>
+          <p class="text-orange-400 font-semibold mt-1">
+            Tambahkan baris ke kedua: <br>
+            ("Admin", EXEC, "/home/client01/spsadmin/sps_225R129"),
+          </p>
+        </div>
+
+        <div>
+          <code>startx</code>
+          <p class="text-gray-400 text-sm mt-1">Mulai kembali antarmuka grafis POS.</p>
+        </div>
+
+        <div>
+          <code>F12</code>
+          <p class="text-gray-400 text-sm mt-1">Cek apakah menu Admin muncul dan bisa dijalankan.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating Menu -->
+  <div id="floatingMenu" class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2">
+    <button id="menuToggle" class="bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-2 rounded-full shadow-lg font-semibold">
+      Menu
+    </button>
+
+    <!-- Menu List -->
+    <div id="menuList" class="hidden flex flex-col space-y-2 mt-2 bg-gray-900/90 backdrop-blur-md p-3 rounded-lg shadow-lg">
+      <a href="../index.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">Beranda</a>
+      <a href="setingPM.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">1. Cara Setting PM</a>
+      <a href="setingPK.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">2. Cara Setting PK</a>
+      <a href="settingEPS.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">3. Setting EPS FLEG</a>
+      <a href="fedoraPostInstall.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">4. Perintah Setelah Install Ulang Fedora 30</a>
+      <a href="hapusMemoriPM.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">5. Cara Hapus Memori PM</a>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menuList = document.getElementById('menuList');
+    menuToggle.addEventListener('click', () => {
+      menuList.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

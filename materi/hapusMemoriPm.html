@@ -14,49 +14,16 @@
 </head>
 <body class="bg-gray-900 font-sans text-gray-200">
 
-  <!-- Navbar -->
-  <nav class="bg-gray-900/80 backdrop-blur-md fixed w-full z-50 shadow-md">
-    <div class="container mx-auto flex items-center justify-between p-4">
-      <div class="flex items-center space-x-3">
-        <img src="../aset/cm.jpeg" alt="Logo CM" class="w-10 h-10 rounded-full border border-cyan-500 shadow-md">
-        <span class="font-extrabold text-lg tracking-wide text-cyan-400">CM Learning</span>
-      </div>
-      <div class="hidden md:flex space-x-8 font-medium items-center">
-        <a href="../index.html" class="hover:text-cyan-400 transition">Beranda</a>
-        <a href="../materi.html" class="hover:text-cyan-400 transition">Materi</a>
-        <a href="../studi-kasus.html" class="hover:text-cyan-400 transition">Studi Kasus</a>
-        <a href="../galeri.html" class="hover:text-cyan-400 transition">Galeri</a>
-        <a href="../sumber.html" class="hover:text-cyan-400 transition">Sumber</a>
-        <a href="../tentang.html" class="hover:text-cyan-400 transition">Tentang</a>
-        <a href="../login.html" class="ml-4 px-3 py-1 rounded bg-red-600 hover:bg-red-700 text-white transition">Logout</a>
-      </div>
-      <div class="md:hidden">
-        <button id="menu-btn" class="focus:outline-none text-gray-300 hover:text-cyan-400">
-          <svg xmlns="http://www.w3.org/2000/svg" id="menu-icon" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <div id="menu" class="hidden md:hidden mt-4 space-y-3 px-4 pb-4">
-      <a href="../index.html" class="block hover:text-cyan-400">Beranda</a>
-      <a href="../materi.html" class="block hover:text-cyan-400">Materi</a>
-      <a href="../studi-kasus.html" class="block hover:text-cyan-400">Studi Kasus</a>
-      <a href="../galeri.html" class="block hover:text-cyan-400">Galeri</a>
-      <a href="../sumber.html" class="block hover:text-cyan-400">Sumber</a>
-      <a href="../tentang.html" class="block hover:text-cyan-400">Tentang</a>
-      <a href="../login.html" class="block mt-2 px-3 py-2 rounded bg-red-600 hover:bg-red-700 text-white transition">Logout</a>
-    </div>
-  </nav>
-
   <!-- Header -->
-  <header class="pt-28 pb-12 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-cyan-400 drop-shadow-lg">Cara Hapus Memori PM</h1>
-    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4 rounded-full"></div>
-    <p class="mt-4 text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-      Panduan langkah-langkah untuk menghapus memori PM secara aman menggunakan terminal.
-    </p>
-  </header>
+<header class="pt-24 pb-12 text-center relative">
+  <h1 class="text-3xl md:text-4xl font-extrabold text-cyan-400 drop-shadow-md">
+    Cara Hapus Memori PM
+  </h1>
+  <div class="w-28 h-1 bg-cyan-500 mx-auto mt-3 rounded-full relative overflow-hidden">
+    <div class="absolute left-0 top-0 h-1 bg-cyan-300 animate-pulse w-1/2 rounded-full"></div>
+  </div>
+</header>
+
 
   <!-- Content -->
   <main class="max-w-3xl mx-auto p-6 bg-gray-800 my-10 rounded-xl shadow-lg space-y-8">
@@ -66,27 +33,27 @@
       <div class="bg-gray-900 p-4 rounded-md shadow-inner font-mono text-gray-200 space-y-3">
 
         <div>
-          <p><code>telnet 192.168.1.106</code></p>
+          <p><code class="bg-gray-700 p-1 rounded">telnet 192.168.1.106</code></p>
           <p class="text-gray-400 text-sm mt-1">Menghubungkan komputer ke PM melalui protokol telnet.</p>
         </div>
 
         <div>
-          <p><code>root</code></p>
+          <p><code class="bg-gray-700 p-1 rounded">root</code></p>
           <p class="text-gray-400 text-sm mt-1">Login sebagai administrator PM agar dapat menghapus memori.</p>
         </div>
 
         <div>
-          <p><code>cd /sddisk</code></p>
+          <p><code class="bg-gray-700 p-1 rounded">cd /sddisk</code></p>
           <p class="text-gray-400 text-sm mt-1">Masuk ke direktori tempat data PM disimpan.</p>
         </div>
 
         <div>
-          <p><code>ls</code></p>
+          <p><code class="bg-gray-700 p-1 rounded">ls</code></p>
           <p class="text-gray-400 text-sm mt-1">Melihat daftar file dan folder di direktori PM sebelum penghapusan.</p>
         </div>
 
         <div>
-          <p><code>rm -rf *</code></p>
+          <p><code class="bg-gray-700 p-1 rounded">rm -rf *</code></p>
           <p class="text-gray-400 text-sm mt-1">Menghapus semua file dan folder di direktori PM. <span class="text-orange-400 font-semibold">Hati-hati! Perintah ini permanen.</span></p>
         </div>
 
@@ -99,16 +66,35 @@
 
   </main>
 
+  <!-- Floating Menu -->
+  <div id="floatingMenu" class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2">
+    <button id="menuToggle" class="bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-2 rounded-full shadow-lg font-semibold">
+      Menu
+    </button>
+
+    <!-- Menu List -->
+    <div id="menuList" class="hidden flex flex-col space-y-2 mt-2 bg-gray-900/90 backdrop-blur-md p-3 rounded-lg shadow-lg">
+      <a href="../index.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">Beranda</a>
+      <a href="setingPM.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">1. Cara Setting PM</a>
+      <a href="setingPK.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">2. Cara Setting PK</a>
+      <a href="settingEPS.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">3. Setting EPS FLEG</a>
+      <a href="fedoraPostInstall.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">4. Perintah Setelah Install Ulang Fedora 30</a>
+      <a href="hapusMemoriPM.html" class="px-3 py-2 rounded bg-gray-800 hover:bg-gray-700 text-white transition">5. Cara Hapus Memori PM</a>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-700">
     <p>&copy; 2025 | Developed by Rllz</p>
   </footer>
 
   <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
+    // Floating menu toggle
+    const menuToggle = document.getElementById("menuToggle");
+    const menuList = document.getElementById("menuList");
+
+    menuToggle.addEventListener("click", () => {
+      menuList.classList.toggle("hidden");
     });
   </script>
 

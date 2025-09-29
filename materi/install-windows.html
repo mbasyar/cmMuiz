@@ -3,154 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>
-    if (localStorage.getItem('isLoggedIn') !== 'true') {
-      window.location.href = 'login.html';
-    }
-  </script>
-
-  <title>Instalasi Windows & Dual Boot</title>
+  <title>Cara Instalasi Windows</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    code { background-color: #2d2d2d; padding: 0.25rem 0.5rem; border-radius: 0.25rem; display: block; }
+    .note { color: #ff9800; font-weight: 600; }
+    .step-number { 
+      display: inline-block; 
+      background-color: #0ea5e9; 
+      color: white; 
+      width: 1.5rem; 
+      height: 1.5rem; 
+      text-align: center; 
+      border-radius: 9999px; 
+      font-weight: bold; 
+      margin-right: 0.5rem; 
+    }
+  </style>
 </head>
-<body class="bg-gray-900 font-sans text-gray-200">
-
-   <!-- Navbar -->
-  <nav class="bg-gray-800 text-white p-4 shadow-md">
-    <div class="container mx-auto flex items-center justify-between">
-      <!-- Logo -->
-      <div class="flex items-center space-x-2">
-        <img src="../aset/cm.jpeg" alt="Logo SPI" class="w-10 h-10 rounded-full">
-        <span class="font-bold text-lg tracking-wide">Centralized Maintenance</span>
-      </div>
-
-      <!-- Menu Desktop -->
-      <div class="hidden md:flex space-x-8">
-        <a href="../index.html" class="hover:text-cyan-400 transition duration-300">Beranda</a>
-        <a href="install-windows.html" class="hover:text-cyan-400 transition duration-300">Install Windows</a>
-        <a href="barrier.html" class="text-cyan-400 font-bold transition duration-300">Barrier Gate</a>
-        <a href="ip-kamera.html" class="hover:text-cyan-400 transition duration-300">IP Kamera</a>
-        <a href="pos-client.html" class="hover:text-cyan-400 transition duration-300">POS Client</a>
-        <a href="patching.html" class="hover:text-cyan-400 transition duration-300">Patching</a>
-        <a href="instalasi-fedora-admin.html" class="hover:text-cyan-400 transition duration-300">Instalasi Fedora Admin</a>
-      </div>
-
-      <!-- Hamburger Mobile -->
-      <div class="md:hidden">
-        <button id="menu-btn" class="focus:outline-none">
-          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" 
-               viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-   <!-- Dropdown Mobile -->
-    <div id="menu" class="hidden md:hidden mt-4 space-y-2 px-4">
-      <a href="../index.html" class="block hover:text-cyan-400 transition duration-300">Beranda</a>
-      <a href="patching.html" class="block hover:text-cyan-400 transition duration-300">Patching</a>
-      <a href="barrier.html" class="block hover:text-cyan-400 transition duration-300">Barrier Gate</a>
-      <a href="ip-kamera.html" class="block hover:text-cyan-400 transition duration-300">IP Kamera</a>
-      <a href="pos-client.html" class="block hover:text-cyan-400 transition duration-300">POS Client</a>
-      <a href="instalasi-fedora-admin.html" class="block hover:text-cyan-400 transition duration-300">Installasi admin</a>
-      <a href="install-windows.html" class="block hover:text-cyan-400 transition duration-300">Installasi Windows</a>
-    </div>
-  </nav>
+<body class="bg-gray-900 text-gray-200 min-h-screen flex flex-col">
 
   <!-- Header -->
-  <header class="bg-gradient-to-r from-cyan-700 to-cyan-900 text-white p-12 text-center shadow-xl">
-    <h1 class="text-4xl md:text-5xl font-bold mb-3">Instalasi Windows & Dual Boot</h1>
-    <p class="text-lg md:text-xl opacity-90">Digunakan untuk sistem hybrid antara Fedora (Server) dan Windows (Client Tools)</p>
+  <header class="pt-20 pb-8 text-center">
+    <h1 class="text-4xl font-extrabold text-cyan-400 drop-shadow-lg">Cara Instalasi Windows</h1>
+    <div class="w-28 h-1 bg-cyan-500 mx-auto mt-3 rounded-full"></div>
   </header>
 
-  <!-- Content -->
-  <main class="max-w-5xl mx-auto my-12 px-4 md:px-0 space-y-10">
+  <!-- Main Card -->
+  <main class="max-w-3xl mx-auto p-6 bg-gray-800 rounded-xl shadow-lg space-y-6">
 
-    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
-      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">1. Kapan Perlu Windows?</h2>
-      <p class="text-gray-300 mb-2">Beberapa tools atau software hanya tersedia di Windows, seperti:</p>
-      <ul class="list-disc pl-6 space-y-1 text-gray-300">
-        <li>POS Client versi Windows</li>
-        <li>Tool konfigurasi IP kamera</li>
-        <li>VNC Viewer & TeamViewer untuk remote</li>
-      </ul>
-    </section>
+    <div class="space-y-4">
+      <div class="flex items-start">
+        <span class="step-number">1</span>
+        <code>Siapkan USB bootable atau DVD Windows. Backup data penting.</code>
+      </div>
+      <div class="flex items-start">
+        <span class="step-number">2</span>
+        <code>Hidupkan komputer lalu tekan F2 / F10 / DEL / ESC untuk masuk BIOS/UEFI.</code>
+      </div>
+      <div class="flex items-start">
+        <span class="step-number">3</span>
+        <code>Cari menu Boot Priority / Boot Order. Set USB/DVD sebagai urutan pertama boot.</code>
+      </div>
+      <div class="flex items-start">
+        <span class="step-number">4</span>
+        <code>Simpan pengaturan dan restart komputer untuk boot dari USB/DVD.</code>
+      </div>
+      <div class="flex items-start">
+        <span class="step-number">5</span>
+        <code>Pilih bahasa, format waktu & keyboard, lalu klik Next → Install Now.</code>
+      </div>
+      <div class="flex items-start">
+        <span class="step-number">6</span>
+        <code>Masukkan Windows Product Key jika ada, atau klik "I don’t have a product key".</code>
+      </div>
+      <div class="flex items-start">
+        <span class="step-number">7</span>
+        <code>Pilih Custom (Install Windows only) untuk instalasi bersih.</code>
+      </div>
+      <div class="flex items-start">
+        <span class="step-number">8</span>
+        <code>Pilih partisi disk untuk instalasi. Hapus partisi lama jika ingin bersih → New → Apply → Next.</code>
+      </div>
+      <div class="flex items-start">
+        <span class="step-number">9</span>
+        <code>Tunggu proses instalasi selesai, komputer akan restart beberapa kali. Jangan cabut USB/DVD.</code>
+      </div>
+      <div class="flex items-start">
+        <span class="step-number">10</span>
+        <code>Konfigurasi awal: pilih wilayah, layout keyboard, buat akun pengguna & password, atur privasi.</code>
+      </div>
+    </div>
 
-    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
-      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">2. Instalasi Windows</h2>
-      <ol class="list-decimal pl-6 space-y-2 text-gray-300">
-        <li>Download ISO Windows 10 dari situs resmi</li>
-        <li>Buat USB bootable dengan Rufus</li>
-        <li>Boot dari USB → ikuti wizard instalasi</li>
-        <li>Di bagian partisi, sisakan sebagian ruang untuk Fedora (misalnya 40GB)</li>
-        <li>Instal Windows di partisi utama → reboot → selesaikan setup</li>
-      </ol>
-    </section>
-
-    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
-      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">3. Instal Fedora Setelah Windows</h2>
-      <p class="text-gray-300 mb-2">Agar bootloader Fedora bisa mengenali Windows, pastikan Fedora diinstal setelah Windows.</p>
-      <ul class="list-disc pl-6 space-y-1 text-gray-300">
-        <li>Boot USB Fedora</li>
-        <li>Pilih “Manual Partitioning” dan gunakan ruang kosong yang tersisa</li>
-        <li>Jangan hapus partisi Windows!</li>
-        <li>Lanjutkan instalasi Fedora seperti biasa</li>
-        <li>Pastikan GRUB bootloader terinstal di <code class="bg-gray-700 p-1 rounded">/dev/sda</code></li>
-      </ul>
-    </section>
-
-    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
-      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">4. Memilih OS Saat Booting</h2>
-      <p class="text-gray-300 mb-2">Saat menyalakan komputer akan muncul menu pilihan OS:</p>
-      <ul class="list-disc pl-6 space-y-1 text-gray-300">
-        <li>Fedora (default)</li>
-        <li>Windows Boot Manager</li>
-      </ul>
-      <p class="text-gray-300 mt-2">Ubah urutan default OS lewat terminal Fedora:</p>
-      <code class="block bg-gray-700 p-2 rounded text-sm">sudo grub2-set-default 1</code>
-    </section>
-
-    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
-      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">5. Tips & Masalah Umum</h2>
-      <ul class="list-disc pl-6 space-y-1 text-gray-300">
-        <li>Hindari instal Fedora duluan → Windows bisa menghapus GRUB</li>
-        <li>Selalu backup data sebelum membagi partisi</li>
-        <li>Jika menu boot tidak muncul: periksa BIOS (UEFI vs Legacy)</li>
-        <li>Gunakan aplikasi EasyBCD (Windows) jika GRUB bermasalah</li>
-      </ul>
-    </section>
-
-    <section class="bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-cyan-600 transition duration-500">
-      <h2 class="text-2xl font-semibold text-cyan-400 mb-4">6. Referensi Video</h2>
-      <ul class="list-disc pl-6 space-y-3 text-cyan-400">
-        <li><a href="https://www.youtube.com/watch?v=E9vzKtwgZ9w" target="_blank" class="hover:underline hover:text-cyan-300">Dual Boot Fedora & Windows (YouTube)</a></li>
-        <li><a href="https://fedoraproject.org/wiki/Windows_dual_boot" target="_blank" class="hover:underline hover:text-cyan-300">Fedora Dual Boot Wiki</a></li>
-      </ul>
-    </section>
+    <p class="note">
+      Catatan: Pastikan semua data penting dicadangkan sebelum instalasi. Ikuti urutan langkah agar instalasi berjalan lancar.
+    </p>
 
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-400 text-center p-6 mt-12 border-t border-gray-700">
-    <p>&copy; 2025 | Sistem Pembelajaran CM | Dibuat oleh Mahasiswa</p>
+  <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-700 mt-auto">
+    <p>&copy; 2025 | Developed by Rllz</p>
   </footer>
-
-  <!-- Script Hamburger Mobile -->
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    const icon = document.getElementById('menu-icon');
-
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      if (!menu.classList.contains('hidden')) {
-        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
-      } else {
-        icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
-      }
-    });
-  </script>
 
 </body>
 </html>
