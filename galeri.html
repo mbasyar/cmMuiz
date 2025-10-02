@@ -68,7 +68,7 @@
     <div class="relative z-10">
       <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-wide drop-shadow-lg">Galeri Komponen Sistem Parkir</h1>
       <p class="text-base md:text-lg opacity-90 max-w-2xl mx-auto leading-relaxed">
-        Dokumentasi visual perangkat dan kegiatan CM.
+        Dokumentasi visual perangkat keras utama dalam sistem parkir terpusat (CM).
       </p>
     </div>
   </header>
@@ -76,21 +76,36 @@
   <!-- Gallery -->
 <main class="max-w-6xl mx-auto p-6 mt-10">
   <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    <!-- Card Tombol ke Galeri Keluarga -->
-<div class="relative flex items-center justify-center rounded-xl shadow-xl bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-400 overflow-hidden group">
-  <a href="./galeri/galeri.html" class="flex flex-col items-center justify-center w-full h-48 sm:h-56 md:h-60 text-center px-4">
+<!-- Card Tombol ke Galeri Keluarga (Versi 2) -->
+<a href="/galeri/galeri.html" 
+   class="relative flex flex-col items-center justify-center rounded-2xl 
+          bg-white/10 backdrop-blur-md border border-cyan-400/50 
+          hover:border-cyan-300 shadow-lg
+          w-full h-48 sm:h-56 md:h-60 overflow-hidden group transition duration-500">
+
+  <!-- Glow Luar -->
+  <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-500 
+              opacity-30 blur-xl group-hover:opacity-50 transition duration-500"></div>
+
+  <!-- Isi Konten -->
+  <div class="relative z-10 flex flex-col items-center">
     <!-- Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 md:w-14 md:h-14 text-white drop-shadow-lg mb-3 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm6 2h-1.26c-.41 0-.75.34-.75.75v4.25h-8v-4.25c0-.41-.34-.75-.75-.75H6c-1.66 0-3 1.34-3 3v3.25c0 .41.34.75.75.75h16.5c.41 0 .75-.34.75-.75V17c0-1.66-1.34-3-3-3z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         class="w-14 h-14 md:w-16 md:h-16 text-cyan-300 drop-shadow-lg mb-3 
+                group-hover:scale-110 transition-transform duration-300"
+         fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 
+               1.8-4 4 1.8 4 4 4zm6 2h-1.3c-.4 0-.7.3-.7.7v4.3h-8v-4.3c0-.4-.3-.7-.7-.7H6c-1.7 
+               0-3 1.3-3 3v3.3c0 .4.3.7.7.7h16.5c.4 0 .7-.3.7-.7V17c0-1.7-1.3-3-3-3z"/>
     </svg>
+
     <!-- Text -->
-    <span class="text-lg md:text-xl font-extrabold text-white tracking-wide drop-shadow-md group-hover:text-gray-900 transition-colors duration-300">
-      Lihat Galeri Keluarga
+    <span class="text-lg md:text-xl font-extrabold text-cyan-200 tracking-wide text-center
+                 drop-shadow-md group-hover:text-white transition-colors duration-300">
+      Galeri Keluarga👨‍👩‍👧‍👦 
     </span>
-  </a>
-  <!-- Efek Hover -->
-  <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
-</div>
+  </div>
+</a>
 
     <!-- Card -->
     <div class="relative group rounded-xl overflow-hidden shadow-lg bg-gray-800">
