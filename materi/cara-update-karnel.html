@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CARA UPDATE KERNEL</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+<!-- Header -->
+<header class="pt-20 pb-6 text-center bg-gradient-to-r from-cyan-700 to-cyan-900 shadow-lg">
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
+    CARA UPDATE KERNEL
+  </h1>
+  <p class="text-gray-300 mt-2 text-sm">09 Oktober 2025 | 22:47 Kamis</p>
+  <div class="w-28 h-1 bg-cyan-500 mx-auto mt-3 rounded-full"></div>
+</header>
+
+<!-- Main Content -->
+<main class="max-w-3xl mx-auto p-6 space-y-6">
+
+  <!-- Step Section -->
+  <section class="bg-gray-800 p-6 rounded-2xl shadow-lg space-y-6 font-mono relative overflow-hidden">
+
+    <div class="flex items-start space-x-4">
+      <div class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center">1</div>
+      <div>
+        <p><code class="bg-gray-700 px-2 py-1 rounded">cd /tmp/bitmap_in/update</code></p>
+        <p class="text-gray-400 text-sm mt-1">Masuk ke direktori tempat file update kernel berada.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start space-x-4">
+      <div class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center">2</div>
+      <div>
+        <p><code class="bg-gray-700 px-2 py-1 rounded">ls</code></p>
+        <p class="text-gray-400 text-sm mt-1">Pastikan ada dua folder kernel di dalam direktori tersebut.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start space-x-4">
+      <div class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center">3</div>
+      <div>
+        <p><code class="bg-gray-700 px-2 py-1 rounded">cd kernelf15</code></p>
+        <p class="text-gray-400 text-sm mt-1">Masuk ke folder pertama kernel.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start space-x-4">
+      <div class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center">4</div>
+      <div>
+        <p><code class="bg-gray-700 px-2 py-1 rounded">ls</code></p>
+        <p class="text-gray-400 text-sm mt-1">Periksa isi folder, pastikan file RPM tersedia.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start space-x-4">
+      <div class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center">5</div>
+      <div>
+        <p><code class="bg-gray-700 px-2 py-1 rounded">rpm -Uvh *.rpm</code></p>
+        <p class="text-gray-400 text-sm mt-1">Lakukan update paket kernel dari folder pertama.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start space-x-4">
+      <div class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center">6</div>
+      <div>
+        <p><code class="bg-gray-700 px-2 py-1 rounded">cd kernelfc19</code></p>
+        <p class="text-gray-400 text-sm mt-1">Masuk ke folder kernel kedua.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start space-x-4">
+      <div class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center">7</div>
+      <div>
+        <p><code class="bg-gray-700 px-2 py-1 rounded">ls</code></p>
+        <p class="text-gray-400 text-sm mt-1">Cek kembali file RPM sebelum update.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start space-x-4">
+      <div class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center">8</div>
+      <div>
+        <p><code class="bg-gray-700 px-2 py-1 rounded">rpm -Uvh *.rpm</code></p>
+        <p class="text-gray-400 text-sm mt-1">Update kernel dari folder kedua.</p>
+      </div>
+    </div>
+
+    <div class="flex items-start space-x-4">
+      <div class="flex-shrink-0 w-8 h-8 bg-cyan-500 text-white font-bold rounded-full flex items-center justify-center">9</div>
+      <div>
+        <p><code class="bg-gray-700 px-2 py-1 rounded">reboot</code></p>
+        <p class="text-gray-400 text-sm mt-1">Restart sistem untuk menerapkan kernel baru.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <p class="text-orange-400 font-semibold text-sm">
+    Catatan: Pastikan proses update berjalan tanpa error sebelum melakukan reboot.
+  </p>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-700 mt-10">
+  <p>&copy; 2025 | Developed by Rllz</p>
+</footer>
+
+<!-- Floating Menu Modern -->
+<div id="floatingMenu" class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-2">
+  <button id="menuToggle" 
+          class="flex items-center justify-center bg-cyan-500 hover:from-cyan-400 hover:to-cyan-300 bg-gradient-to-r text-white px-5 py-3 rounded-full shadow-xl font-semibold transform transition-all duration-300 hover:scale-110">
+    <span class="mr-2">Menu</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+
+  <!-- Menu List -->
+  <div id="menuList" class="hidden flex flex-col space-y-2 mt-3 bg-gray-900/80 backdrop-blur-lg p-4 rounded-xl shadow-2xl border border-gray-700">
+    <a href="../index.html" class="flex items-center px-4 py-2 rounded-lg bg-gray-800 hover:bg-cyan-600 text-white font-medium transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6m-6 0H7m0 0v6m0-6l-2 2m2-2l2 2"/>
+      </svg>
+      Beranda
+    </a>
+    <a href="../materi.html" class="flex items-center px-4 py-2 rounded-lg bg-gray-800 hover:bg-cyan-600 text-white font-medium transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3h8v4M3 7h18v14H3V7z"/>
+      </svg>
+      Daftar Materi
+    </a>
+  </div>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+  menuToggle.addEventListener('click', () => {
+    menuList.classList.toggle('hidden');
+    menuToggle.classList.toggle('bg-cyan-600');
+  });
+</script>
+
+</body>
+</html>

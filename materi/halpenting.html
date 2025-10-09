@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAL-HAL PENTING CARA SETTING DI FEDORA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+<!-- Header -->
+<header class="pt-20 pb-6 text-center bg-gradient-to-r from-cyan-700 to-cyan-900 shadow-lg">
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg">
+    HAL-HAL PENTING CARA SETTING DI FEDORA
+  </h1>
+  <div class="w-28 h-1 bg-cyan-500 mx-auto mt-3 rounded-full"></div>
+</header>
+
+<!-- Main Content -->
+<main class="max-w-4xl mx-auto p-6 space-y-8">
+
+  <!-- Bagian 1 -->
+  <section class="bg-gray-800 p-5 rounded-xl shadow-lg space-y-4">
+    <h2 class="text-xl font-bold text-cyan-400 border-b border-cyan-700 pb-1">Konsole / xterm / Terminal</h2>
+    <p>Aplikasi yang memungkinkan kita menjalankan perintah di sistem Linux. Biasanya tampilannya diawali dengan <code class="bg-gray-700 p-1 rounded">[root@localhost root]#</code>.</p>
+    <ul class="list-disc list-inside text-gray-300">
+      <li>Admin → klik kanan lalu pilih <b>New Terminal</b> atau tekan <b>Alt + F2</b>, lalu ketik <code>xterm</code>.</li>
+      <li>SPS pos masuk → tekan <b>Ctrl + Alt + F1</b>, login root (password: 123456).</li>
+      <li>CPMS pos masuk–keluar → tekan <b>F12</b> lalu pilih <b>xterm</b> atau tekan <b>Ctrl + Alt + Backspace</b>.</li>
+    </ul>
+  </section>
+
+  <!-- Bagian 2 -->
+  <section class="bg-gray-800 p-5 rounded-xl shadow-lg space-y-4">
+    <h2 class="text-xl font-bold text-cyan-400 border-b border-cyan-700 pb-1">Restart Program atau Aplikasi</h2>
+    <p>Digunakan bila ada perubahan pada database atau file konfigurasi di pos.</p>
+    <ul class="list-disc list-inside">
+      <li>SPS pos masuk → tekan <b>Ctrl + Alt + Backspace</b>.</li>
+      <li>CPMS pos masuk–keluar → tekan <b>Ctrl + Alt + Backspace</b>, lalu ketik <code>startx</code> dan login kembali.</li>
+    </ul>
+  </section>
+
+  <!-- Bagian 3 -->
+  <section class="bg-gray-800 p-5 rounded-xl shadow-lg space-y-4">
+    <h2 class="text-xl font-bold text-cyan-400 border-b border-cyan-700 pb-1">Restart System</h2>
+    <p>Digunakan bila restart aplikasi tidak cukup atau ada perubahan sistem.</p>
+    <ul class="list-disc list-inside">
+      <li>SPS pos masuk → tekan <b>Ctrl + Alt + F1</b>, login root, lalu ketik <code>reboot</code> atau <b>Ctrl + Alt + Del</b>.</li>
+      <li>CPMS pos masuk–keluar → tekan <b>F12</b> → ReBoot, atau tekan <b>Ctrl + Alt + Backspace</b> lalu ketik <code>reboot</code>.</li>
+    </ul>
+  </section>
+
+  <!-- Bagian 4 -->
+  <section class="bg-gray-800 p-5 rounded-xl shadow-lg space-y-4">
+    <h2 class="text-xl font-bold text-cyan-400 border-b border-cyan-700 pb-1">Restart File Sharing</h2>
+    <p>Digunakan jika kamera atau sistem jaringan tidak tampil (khusus lokasi SPS atau CPMS dengan FLAZZ BCA).</p>
+    <p><code class="bg-gray-700 p-1 rounded">service netfs restart</code></p>
+    <p>Pastikan muncul tulisan <span class="text-green-400">[OK]</span> di sisi kanan. Jika <span class="text-red-400">failed</span>, cari tahu penyebabnya.</p>
+  </section>
+
+  <!-- Bagian 5 -->
+  <section class="bg-gray-800 p-5 rounded-xl shadow-lg space-y-4">
+    <h2 class="text-xl font-bold text-cyan-400 border-b border-cyan-700 pb-1">Pengenalan Dasar Penempatan File System</h2>
+    <h3 class="font-semibold text-cyan-300 mt-3">CPU POS CPMS</h3>
+    <p><code>/home/client01/spsclient/</code> berisi:</p>
+    <ul class="list-disc list-inside">
+      <li><code>spsclient</code> – program utama</li>
+      <li><code>Setting.ini</code> – konfigurasi</li>
+      <li><code>default.jpg</code> – file pelengkap</li>
+    </ul>
+
+    <h3 class="font-semibold text-cyan-300 mt-3">CPU POS MASUK SPS</h3>
+    <p><code>/home/client01/spsin/</code> berisi:</p>
+    <ul class="list-disc list-inside">
+      <li><code>sps_auto</code> – program utama</li>
+      <li><code>park.ini</code>, <code>text.ini</code>, <code>ticket.dat</code></li>
+      <li>Folder tambahan: <code>/home/client01/spsin/multimedia/</code></li>
+    </ul>
+
+    <h3 class="font-semibold text-cyan-300 mt-3">CPU ADMIN</h3>
+    <p><code>/home/adm01/spsadmin/</code> berisi:</p>
+    <ul class="list-disc list-inside">
+      <li><code>sps</code>, <code>sps.ini</code></li>
+      <li>Folder <code>lang</code> berisi <code>indonesian.ini</code></li>
+      <li>Folder <code>report</code> berisi file laporan</li>
+    </ul>
+  </section>
+
+  <!-- Bagian 6 -->
+  <section class="bg-gray-800 p-5 rounded-xl shadow-lg space-y-4">
+    <h2 class="text-xl font-bold text-cyan-400 border-b border-cyan-700 pb-1">Perintah-Perintah Dasar Linux</h2>
+    <div class="space-y-3 font-mono">
+      <p><code>cd</code> → berpindah direktori</p>
+      <p><code>cp</code> → menyalin file atau folder (<code>cp -R</code> untuk folder)</p>
+      <p><code>ls</code> → melihat isi direktori</p>
+      <p><code>rm</code> → menghapus file (<code>rm -rdf</code> untuk folder)</p>
+      <p><code>mkdir</code> → membuat folder baru</p>
+      <p><code>mv</code> → memindahkan atau rename file</p>
+      <p><code>vi</code> → mengedit file (gunakan <b>Insert</b>, <b>Esc</b>, lalu <code>:wq</code> atau <code>:q!</code>)</p>
+      <p><code>ssh root@ip</code> → remote access</p>
+      <p><code>sftp root@ip</code> → transfer file (gunakan <code>get</code> dan <code>put</code>)</p>
+    </div>
+  </section>
+
+  <p class="text-orange-400 font-semibold text-sm">
+    Catatan: Simpan setiap perubahan konfigurasi dalam direktori <code>backupsys</code>.
+  </p>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-700 mt-10">
+  <p>&copy; 2025 | Developed by Rllz</p>
+</footer>
+
+<!-- Floating Menu Modern -->
+<div id="floatingMenu" class="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-2">
+  <button id="menuToggle" 
+          class="flex items-center justify-center bg-cyan-500 hover:from-cyan-400 hover:to-cyan-300 bg-gradient-to-r text-white px-5 py-3 rounded-full shadow-xl font-semibold transform transition-all duration-300 hover:scale-110">
+    <span class="mr-2">Menu</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+
+  <!-- Menu List -->
+  <div id="menuList" class="hidden flex flex-col space-y-2 mt-3 bg-gray-900/80 backdrop-blur-lg p-4 rounded-xl shadow-2xl border border-gray-700">
+    <a href="../index.html" class="flex items-center px-4 py-2 rounded-lg bg-gray-800 hover:bg-cyan-600 text-white font-medium transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6m-6 0H7m0 0v6m0-6l-2 2m2-2l2 2"/>
+      </svg>
+      Beranda
+    </a>
+    <a href="../materi.html" class="flex items-center px-4 py-2 rounded-lg bg-gray-800 hover:bg-cyan-600 text-white font-medium transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3h8v4M3 7h18v14H3V7z"/>
+      </svg>
+      Daftar Materi
+    </a>
+  </div>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const menuList = document.getElementById('menuList');
+  menuToggle.addEventListener('click', () => {
+    menuList.classList.toggle('hidden');
+    menuToggle.classList.toggle('bg-cyan-600');
+  });
+</script>
+
+</body>
+</html>
